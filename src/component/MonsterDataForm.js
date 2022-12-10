@@ -18,7 +18,6 @@ class MonsterDataForm extends React.Component {
     let obj = {}
     obj[e.target.name] = e.target.value
     this.setState(obj, () => {
-      console.log(this.state)
       this.props.onSubmit(this.state)
     })
   }
@@ -26,7 +25,6 @@ class MonsterDataForm extends React.Component {
   onImageChange(e) {
     let photoUrl = URL.createObjectURL(e.target.files[0])
     this.setState({photoUrl: photoUrl}, () => {
-      console.log(this.state)
       this.props.onSubmit(this.state)
     })
   }
@@ -87,10 +85,9 @@ class MonsterDataForm extends React.Component {
             type='text'
             value={this.state.biomes}
             onChange={(e) => {
-              let biomes = e.target.value.split(/[,\s]+/).map(e => e.trim())
+              let biomes = e.target.value.split(/[,]+/)
               let obj = {biomes: biomes}
               this.setState(obj, () => {
-                console.log(this.state)
                 this.props.onSubmit(this.state)
               })
             }}
@@ -118,7 +115,6 @@ class MonsterDataForm extends React.Component {
                 let attribute = st.attributes
                 attribute.damage = parseInt(e.target.value)
                 this.setState(attribute, () => {
-                  console.log(this.state)
                   this.props.onSubmit(this.state)
                 })
               }}
@@ -139,7 +135,6 @@ class MonsterDataForm extends React.Component {
                 let attribute = st.attributes
                 attribute.defense = parseInt(e.target.value)
                 this.setState(attribute, () => {
-                  console.log(this.state)
                   this.props.onSubmit(this.state)
                 })
               }}
@@ -160,7 +155,6 @@ class MonsterDataForm extends React.Component {
                 let attribute = st.attributes
                 attribute.health = parseInt(e.target.value)
                 this.setState(attribute, () => {
-                  console.log(this.state)
                   this.props.onSubmit(this.state)
                 })
               }}
@@ -181,7 +175,6 @@ class MonsterDataForm extends React.Component {
                 let attribute = st.attributes
                 attribute.speed = parseInt(e.target.value)
                 this.setState(attribute, () => {
-                  console.log(this.state)
                   this.props.onSubmit(this.state)
                 })
               }}
