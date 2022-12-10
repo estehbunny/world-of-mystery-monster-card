@@ -1,6 +1,6 @@
 import React from 'react'
-import MonsterCard from './MonsterCard.js'
-import MonsterDataForm from './MonsterDataForm'
+import MonsterCard from './component/MonsterCard'
+import MonsterDataForm from './component/MonsterDataForm'
 
 class App extends React.Component {
   constructor(props) {
