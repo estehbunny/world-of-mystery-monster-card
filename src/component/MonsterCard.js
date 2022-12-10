@@ -4,7 +4,7 @@ class MonsterCard extends React.Component {
   render() {
     return (
       <div className='page p-4'>
-        <div className='background rounded-3xl'>
+        <div className='card rounded-3xl'>
           <div className='m-auto mb-4 flex min-w-full flex-col items-center md:flex-row justify-around'>
             <PhotoCard
               name={this.props.monster.name}

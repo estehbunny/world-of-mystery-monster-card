@@ -35,12 +35,12 @@
     @apply text-lg font-medium;
   }
 
-  .background {
+  .card {
     @apply container m-auto max-w-3xl bg-navy p-8 text-white;
   }
 
   .page {
-    @apply m-auto w-full bg-navy-dark text-white;
+    @apply w-full bg-navy-dark text-white;
   }
 }
 
