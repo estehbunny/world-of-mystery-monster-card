@@ -129,12 +129,12 @@ class SkillList extends React.Component {
           <div className='mx-1 text-md font-bold uppercase text-slate-400'>
             {this.props.description}
           </div>
-          <div className='flex'>
+          <div>
             {Array.from(Array(this.props.stars), (e, i) => {
               return (
                 <img
                   key={i}
-                  className={'h-6 w-6 mx-0.5 mb-2'}
+                  className={'h-6 w-6 mx-0.5 mb-2 inline-block'}
                   src={`${process.env.PUBLIC_URL}/assets/star.png`}
                   alt={`${this.props.description} stars`}
                 />
