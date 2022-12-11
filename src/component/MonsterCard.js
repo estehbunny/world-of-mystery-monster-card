@@ -3,11 +3,11 @@ import React from 'react'
 class MonsterCard extends React.Component {
   render() {
     let forceWide = this.props.forceWide ?? false
-    let cssVarWideCard = (forceWide) ? 'flex-row' : 'flex-col md:flex-row'
+    let cssVarWideCard = (forceWide) ? 'flex-row items-start' : 'items-center flex-col md:flex-row'
     return (
       <div className={`page p-2 ${this.props.className ?? ''}`}>
         <div className='card rounded-3xl'>
-          <div className={`m-auto mb-4 flex min-w-full items-center ${cssVarWideCard} justify-between`}>
+          <div className={`m-auto mb-4 flex min-w-full ${cssVarWideCard} justify-between sm:items-start`}>
             <PhotoCard
               name={this.props.monster.name}
               imageUrl={this.props.monster.photoUrl}

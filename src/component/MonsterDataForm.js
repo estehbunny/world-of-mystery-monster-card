@@ -130,7 +130,7 @@ class MonsterDataForm extends React.Component {
               type='range'
               min='1'
               max='10'
-              className='h-2 rounded-lg w-full'
+              className='hidden sm:block h-2 rounded-lg w-full'
               value={st.attributes.damage}
               onChange={(e) => {
                 let attribute = st.attributes
@@ -140,6 +140,34 @@ class MonsterDataForm extends React.Component {
                 })
               }}
             />
+            <div className='inline-flex w-full rounded-md shadow-sm mt-2 sm:hidden' role='group'>
+              <button
+                type='button'
+                onClick={() => {
+                  let attribute = st.attributes
+                  if (attribute.damage > 1) attribute.damage--
+                  this.setState(attribute, () => {
+                    this.props.onSubmit(this.state)
+                  })
+                }}
+                className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-l-lg border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
+              >
+                ➖
+              </button>
+              <button
+                type='button'
+                onClick={() => {
+                  let attribute = st.attributes
+                  if (attribute.damage < 10) attribute.damage++
+                  this.setState(attribute, () => {
+                    this.props.onSubmit(this.state)
+                  })
+                }}
+                className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-r-md border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
+              >
+                ➕
+              </button>
+            </div>
           </div>
           <div className='p-2 flex-1'>
             <label className='label-text' htmlFor='attrDefense'>
@@ -150,7 +178,7 @@ class MonsterDataForm extends React.Component {
               type='range'
               min='1'
               max='10'
-              className='h-2 rounded-lg w-full'
+              className='hidden sm:block h-2 rounded-lg w-full'
               value={st.attributes.defense}
               onChange={(e) => {
                 let attribute = st.attributes
@@ -160,6 +188,34 @@ class MonsterDataForm extends React.Component {
                 })
               }}
             />
+            <div className='inline-flex w-full rounded-md shadow-sm mt-2 sm:hidden' role='group'>
+              <button
+                type='button'
+                onClick={() => {
+                  let attribute = st.attributes
+                  if (attribute.defense > 1) attribute.defense--
+                  this.setState(attribute, () => {
+                    this.props.onSubmit(this.state)
+                  })
+                }}
+                className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-l-lg border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
+              >
+                ➖
+              </button>
+              <button
+                type='button'
+                onClick={() => {
+                  let attribute = st.attributes
+                  if (attribute.defense < 10) attribute.defense++
+                  this.setState(attribute, () => {
+                    this.props.onSubmit(this.state)
+                  })
+                }}
+                className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-r-md border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
+              >
+                ➕
+              </button>
+            </div>
           </div>
           <div className='p-2 flex-1'>
             <label className='label-text' htmlFor='attrHealth'>
@@ -170,7 +226,7 @@ class MonsterDataForm extends React.Component {
               type='range'
               min='1'
               max='10'
-              className='h-2 rounded-lg w-full'
+              className='hidden sm:block h-2 rounded-lg w-full'
               value={st.attributes.health}
               onChange={(e) => {
                 let attribute = st.attributes
@@ -180,6 +236,34 @@ class MonsterDataForm extends React.Component {
                 })
               }}
             />
+            <div className='inline-flex w-full rounded-md shadow-sm mt-2 sm:hidden' role='group'>
+              <button
+                type='button'
+                onClick={() => {
+                  let attribute = st.attributes
+                  if (attribute.health > 1) attribute.health--
+                  this.setState(attribute, () => {
+                    this.props.onSubmit(this.state)
+                  })
+                }}
+                className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-l-lg border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
+              >
+                ➖
+              </button>
+              <button
+                type='button'
+                onClick={() => {
+                  let attribute = st.attributes
+                  if (attribute.health < 10) attribute.health++
+                  this.setState(attribute, () => {
+                    this.props.onSubmit(this.state)
+                  })
+                }}
+                className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-r-md border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
+              >
+                ➕
+              </button>
+            </div>
           </div>
           <div className='p-2 flex-1'>
             <label className='label-text' htmlFor='attrSpeed'>
@@ -190,7 +274,7 @@ class MonsterDataForm extends React.Component {
               type='range'
               min='1'
               max='10'
-              className='h-2 rounded-lg w-full'
+              className='hidden sm:block h-2 rounded-lg w-full'
               value={st.attributes.speed}
               onChange={(e) => {
                 let attribute = st.attributes
@@ -200,6 +284,34 @@ class MonsterDataForm extends React.Component {
                 })
               }}
             />
+            <div className='inline-flex w-full rounded-md shadow-sm mt-2 sm:hidden' role='group'>
+              <button
+                type='button'
+                onClick={() => {
+                  let attribute = st.attributes
+                  if (attribute.speed > 1) attribute.speed--
+                  this.setState(attribute, () => {
+                    this.props.onSubmit(this.state)
+                  })
+                }}
+                className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-l-lg border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
+              >
+                ➖
+              </button>
+              <button
+                type='button'
+                onClick={() => {
+                  let attribute = st.attributes
+                  if (attribute.speed < 10) attribute.speed++
+                  this.setState(attribute, () => {
+                    this.props.onSubmit(this.state)
+                  })
+                }}
+                className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-r-md border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
+              >
+                ➕
+              </button>
+            </div>
           </div>
         </div>
       </div>
