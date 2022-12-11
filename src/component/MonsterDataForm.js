@@ -1,7 +1,6 @@
-import React from "react"
+import React from 'react'
 
 class MonsterDataForm extends React.Component {
-
   constructor(props) {
     super(props)
     this.state = {
@@ -10,7 +9,7 @@ class MonsterDataForm extends React.Component {
       description: props.monster.description,
       biomes: props.monster.biomes,
       attributes: props.monster.attributes,
-      photoUrl: props.monster.photoUrl,
+      photoUrl: props.monster.photoUrl
     }
   }
 
@@ -32,7 +31,7 @@ class MonsterDataForm extends React.Component {
   render() {
     let st = this.state
     return (
-      <div className='p-8 bg-navy text-gray-200'>
+      <div className='px-8 py-4 bg-navy text-gray-200'>
         <h2 className='text-center'>Monster data</h2>
         <div className='p-2'>
           <label className='label-text' htmlFor='name'>
@@ -43,6 +42,7 @@ class MonsterDataForm extends React.Component {
             name='name'
             type='text'
             value={this.state.name}
+            placeholder={`Monster name`}
             onChange={(e) => {
               this.handleChange(e)
             }}
@@ -57,6 +57,7 @@ class MonsterDataForm extends React.Component {
             name='lore'
             type='text'
             value={this.state.lore}
+            placeholder={`Monster lore`}
             onChange={(e) => {
               this.handleChange(e)
             }}
@@ -70,6 +71,8 @@ class MonsterDataForm extends React.Component {
             className='input-text p-2.5'
             name='description'
             value={this.state.description}
+            rows={5}
+            placeholder={'Monster description'}
             onChange={(e) => {
               this.handleChange(e)
             }}
@@ -84,20 +87,38 @@ class MonsterDataForm extends React.Component {
             name='biomes'
             type='text'
             value={this.state.biomes}
+            placeholder={'Example: forest$green'}
             onChange={(e) => {
-              let biomes = e.target.value.split(/[,]+/)
+              let biomes = e.target.value.split(/\s*[,]+/)
               let obj = {biomes: biomes}
               this.setState(obj, () => {
                 this.props.onSubmit(this.state)
               })
             }}
           />
+          <p className='text-xs my-2'>
+            See{' '}
+            <a
+              href='https://tailwindcss.com/docs/customizing-colors'
+              className='text-blue-300 underline'
+            >
+              Tailwind CSS color documentation
+            </a>{' '}
+            for supported color names
+          </p>
         </div>
         <div className='p-2'>
           <label className='label-text' htmlFor='imgupload'>
             Monster art:{' '}
           </label>
-          <input name='imgupload' type='file' accept="image/.jpg,.jpeg,.png,.gif,.webp" onChange={(e) => {this.onImageChange(e)}} />
+          <input
+            name='imgupload'
+            type='file'
+            accept='image/*'
+            onChange={(e) => {
+              this.onImageChange(e)
+            }}
+          />
         </div>
         <div className='flex flex-row w-full'>
           <div className='p-2 flex-1'>
@@ -122,7 +143,7 @@ class MonsterDataForm extends React.Component {
           </div>
           <div className='p-2 flex-1'>
             <label className='label-text' htmlFor='attrDefense'>
-               Defense: {st.attributes.defense}
+              Defense: {st.attributes.defense}
             </label>
             <input
               name='attrDefense'
@@ -171,7 +192,7 @@ class MonsterDataForm extends React.Component {
               max='10'
               className='h-2 rounded-lg w-full'
               value={st.attributes.speed}
-              onChange={(e)  => {
+              onChange={(e) => {
                 let attribute = st.attributes
                 attribute.speed = parseInt(e.target.value)
                 this.setState(attribute, () => {

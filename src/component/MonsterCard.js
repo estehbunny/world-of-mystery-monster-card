@@ -2,10 +2,12 @@ import React from 'react'
 
 class MonsterCard extends React.Component {
   render() {
+    let forceWide = this.props.forceWide ?? false
+    let cssVarWideCard = (forceWide) ? 'flex-row' : 'flex-col md:flex-row'
     return (
-      <div className='page p-4'>
+      <div className={`page p-2 ${this.props.className ?? ''}`}>
         <div className='card rounded-3xl'>
-          <div className='m-auto mb-4 flex min-w-full flex-col items-center md:flex-row justify-around'>
+          <div className={`m-auto mb-4 flex min-w-full items-center ${cssVarWideCard} justify-between`}>
             <PhotoCard
               name={this.props.monster.name}
               imageUrl={this.props.monster.photoUrl}
@@ -24,9 +26,9 @@ class MonsterCard extends React.Component {
             </div>
           </div>
           <div className='text-center'>
-            <h4 className='text-xl font-bold my-2'>BIOMES</h4>
+            <h4 className='text-xl font-bold'>BIOMES</h4>
             <hr className='my-1 border-0 h-0.5 bg-slate-600' />
-            <div className='flex flex-1 justify-center text-center text-lg'>
+            <div className='flex flex-1 flex-wrap justify-center text-center text-lg'>
               {Array.from(this.props.monster.biomes, (e, i) => {
                 let consk = (e) ? e.split("$") : ['', '']
                 return <BiomeChip key={i} name={consk[0]} color={consk[1]} />
@@ -42,7 +44,7 @@ class MonsterCard extends React.Component {
 const BiomeChip = (props) => {
   let [customChipColor, customTextColor] = (props.color) ? [`bg-${props.color}-700`, `text-${props.color}-200`] : ['', '']
   return (
-    <p className={`biome-chip m-2 uppercase ${customChipColor} ${customTextColor}`}>
+    <p className={`biome-chip mx-2 my-1 uppercase ${customChipColor} ${customTextColor}`}>
       {props.name}
     </p>
   )
@@ -51,7 +53,7 @@ const BiomeChip = (props) => {
 const PhotoCard = (props) => {
   return (
     <div>
-      <div className='container m-auto mb-4'>
+      <div className='container m-auto pb-4 md:pb-0'>
         <div className='photo-template-card'>
           <img
             className='photo-card w-full h-full object-cover'
@@ -68,10 +70,10 @@ class MonsterData extends React.Component {
   render() {
     return (
       <div className='flex w-96'>
-        <div className='container m-auto flex flex-col px-2'>
-          <h2 className='text-center'>{this.props.name}</h2>
+        <div className='container m-auto flex flex-col'>
+          <h1 className='text-center'>{this.props.name}</h1>
           <h3 className='text-center'>{this.props.lore}</h3>
-          <div className='py-4'>
+          <div className='pt-4'>
             <div className='skill-card'>
               <SkillList
                 key='damage'
@@ -119,7 +121,7 @@ class SkillList extends React.Component {
         <div className='shrink-0'>
           <img
             className={
-              'h-12 w-12 rounded-xl' + colorByAttribute[this.props.name]
+              'h-10 w-10 sm:h-12 sm:w-12 rounded-xl' + colorByAttribute[this.props.name]
             }
             src={`${process.env.PUBLIC_URL}/assets/icon/${this.props.name}.png`}
             alt={this.props.description}
@@ -134,7 +136,7 @@ class SkillList extends React.Component {
               return (
                 <img
                   key={i}
-                  className={'h-6 w-6 mx-0.5 mb-2 inline-block'}
+                  className={'h-4 w-4 sm:h-6 sm:w-6 mx-0.5 mb-2 inline-block'}
                   src={`${process.env.PUBLIC_URL}/assets/star.png`}
                   alt={`${this.props.description} stars`}
                 />

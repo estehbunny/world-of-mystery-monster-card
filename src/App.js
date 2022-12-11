@@ -34,10 +34,16 @@ function App() {
           Authored by <code>EsTehBunny</code>
         </p>
       </header>
-      <div className='flex flex-col xl:flex-row-reverse'>
-        <MonsterDataForm monster={monster} onSubmit={(e) => onChangeData(e)} className=''/>
-        <MonsterCard monster={monster}/>
-      </div>
+      <main>
+        <div className='flex flex-col xl:flex-row-reverse'>
+          <MonsterDataForm
+            monster={monster}
+            onSubmit={(e) => onChangeData(e)}
+            className=''
+          />
+          <MonsterCard monster={monster} className={'px-4 py-8'} />
+        </div>
+      </main>
       <footer>
         <div className='bg-navy-shade p-4 text-white text-center'>
           &copy; 2022-2023 Akhir Pekan Studio, dibuat oleh{' '}
