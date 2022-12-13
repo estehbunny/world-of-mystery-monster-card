@@ -55,7 +55,7 @@
   }
 
   .photo-template-card {
-    @apply h-[24rem] w-[19rem] rounded-3xl border-opacity-80 bg-slate-500;
+    @apply h-[24rem] w-[19rem] rounded-3xl border-opacity-80 bg-slate-200;
   }
 
   .photo-card {

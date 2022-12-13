@@ -26,7 +26,7 @@ const MonsterCard = (props) => {
         </div>
         <div className='pb-4'>
           <div className='mb-2 text-lg font-bold'>Description</div>
-          <div className='text-justify text-md'>
+          <div className='text-justify text-md min-h-[4.5em]'>
             {props.monster.description}
           </div>
         </div>
@@ -51,7 +51,7 @@ const BiomeChip = (props) => {
     : ['', '']
   return (
     <p
-      className={`biome-chip mx-2 my-1 uppercase ${customChipColor} ${customTextColor}`}
+      className={`biome-chip mx-2 my-1 w-36 uppercase ${customChipColor} ${customTextColor}`}
     >
       {props.name}
     </p>
@@ -80,8 +80,8 @@ const MonsterData = (props) => {
   return (
     <div className='flex w-96'>
       <div className='container m-auto flex flex-col'>
-        <h1 className='text-center'>{props.name}</h1>
-        <h3 className='text-center'>{props.lore}</h3>
+        <h1 className='text-center min-h-[1em]'>{props.name}</h1>
+        <h3 className='text-center min-h-[1em]'>{props.lore}</h3>
         <div className='pt-4'>
           <div className={`skill-card ${wideSkillCard}`}>
             <SkillList
