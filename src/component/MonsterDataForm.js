@@ -28,6 +28,57 @@ class MonsterDataForm extends React.Component {
     })
   }
 
+  valueSlider(attribute, attributeTarget) {
+    return (
+      <>
+        <p className='my-2 text-4xl text-center'>{attribute[attributeTarget]}</p>
+        <input
+          name='attrDamage'
+          type='range'
+          min='1'
+          max='10'
+          className='hidden sm:block h-2 rounded-lg w-full'
+          value={attribute[attributeTarget]}
+          onChange={(e) => {
+            attribute[attributeTarget] = parseInt(e.target.value)
+            this.setState(attribute, () => {
+              this.props.onSubmit(this.state)
+            })
+          }}
+        />
+        <div
+          className='inline-flex w-full rounded-md shadow-sm mt-2 sm:hidden'
+          role='group'
+        >
+          <button
+            type='button'
+            onClick={() => {
+              if (attribute[attributeTarget] > 1) attribute[attributeTarget]--
+              this.setState(attribute, () => {
+                this.props.onSubmit(this.state)
+              })
+            }}
+            className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-l-lg border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
+          >
+            ➖
+          </button>
+          <button
+            type='button'
+            onClick={() => {
+              if (attribute[attributeTarget] < 10) attribute[attributeTarget]++
+              this.setState(attribute, () => {
+                this.props.onSubmit(this.state)
+              })
+            }}
+            className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-r-lg border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
+          >
+            ➕
+          </button>
+        </div>
+      </>
+    )
+  }
+
   render() {
     let st = this.state
     return (
@@ -120,198 +171,30 @@ class MonsterDataForm extends React.Component {
             }}
           />
         </div>
-        <div className='flex flex-row w-full'>
+        <div className='py-2 flex flex-row w-full'>
           <div className='p-2 flex-1'>
-            <label className='label-text' htmlFor='attrDamage'>
-              Damage: {st.attributes.damage}
+            <label className='label-text text-center' htmlFor='attrDamage'>
+              Damage
             </label>
-            <input
-              name='attrDamage'
-              type='range'
-              min='1'
-              max='10'
-              className='hidden sm:block h-2 rounded-lg w-full'
-              value={st.attributes.damage}
-              onChange={(e) => {
-                let attribute = st.attributes
-                attribute.damage = parseInt(e.target.value)
-                this.setState(attribute, () => {
-                  this.props.onSubmit(this.state)
-                })
-              }}
-            />
-            <div className='inline-flex w-full rounded-md shadow-sm mt-2 sm:hidden' role='group'>
-              <button
-                type='button'
-                onClick={() => {
-                  let attribute = st.attributes
-                  if (attribute.damage > 1) attribute.damage--
-                  this.setState(attribute, () => {
-                    this.props.onSubmit(this.state)
-                  })
-                }}
-                className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-l-lg border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
-              >
-                ➖
-              </button>
-              <button
-                type='button'
-                onClick={() => {
-                  let attribute = st.attributes
-                  if (attribute.damage < 10) attribute.damage++
-                  this.setState(attribute, () => {
-                    this.props.onSubmit(this.state)
-                  })
-                }}
-                className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-r-md border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
-              >
-                ➕
-              </button>
-            </div>
+            {this.valueSlider(st.attributes, 'damage')}
           </div>
           <div className='p-2 flex-1'>
-            <label className='label-text' htmlFor='attrDefense'>
-              Defense: {st.attributes.defense}
+            <label className='label-text text-center' htmlFor='attrDefense'>
+              Defense
             </label>
-            <input
-              name='attrDefense'
-              type='range'
-              min='1'
-              max='10'
-              className='hidden sm:block h-2 rounded-lg w-full'
-              value={st.attributes.defense}
-              onChange={(e) => {
-                let attribute = st.attributes
-                attribute.defense = parseInt(e.target.value)
-                this.setState(attribute, () => {
-                  this.props.onSubmit(this.state)
-                })
-              }}
-            />
-            <div className='inline-flex w-full rounded-md shadow-sm mt-2 sm:hidden' role='group'>
-              <button
-                type='button'
-                onClick={() => {
-                  let attribute = st.attributes
-                  if (attribute.defense > 1) attribute.defense--
-                  this.setState(attribute, () => {
-                    this.props.onSubmit(this.state)
-                  })
-                }}
-                className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-l-lg border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
-              >
-                ➖
-              </button>
-              <button
-                type='button'
-                onClick={() => {
-                  let attribute = st.attributes
-                  if (attribute.defense < 10) attribute.defense++
-                  this.setState(attribute, () => {
-                    this.props.onSubmit(this.state)
-                  })
-                }}
-                className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-r-md border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
-              >
-                ➕
-              </button>
-            </div>
+            {this.valueSlider(st.attributes, 'defense')}
           </div>
           <div className='p-2 flex-1'>
-            <label className='label-text' htmlFor='attrHealth'>
-              Health: {st.attributes.health}
+            <label className='label-text text-center' htmlFor='attrHealth'>
+              Health
             </label>
-            <input
-              name='attrHealth'
-              type='range'
-              min='1'
-              max='10'
-              className='hidden sm:block h-2 rounded-lg w-full'
-              value={st.attributes.health}
-              onChange={(e) => {
-                let attribute = st.attributes
-                attribute.health = parseInt(e.target.value)
-                this.setState(attribute, () => {
-                  this.props.onSubmit(this.state)
-                })
-              }}
-            />
-            <div className='inline-flex w-full rounded-md shadow-sm mt-2 sm:hidden' role='group'>
-              <button
-                type='button'
-                onClick={() => {
-                  let attribute = st.attributes
-                  if (attribute.health > 1) attribute.health--
-                  this.setState(attribute, () => {
-                    this.props.onSubmit(this.state)
-                  })
-                }}
-                className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-l-lg border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
-              >
-                ➖
-              </button>
-              <button
-                type='button'
-                onClick={() => {
-                  let attribute = st.attributes
-                  if (attribute.health < 10) attribute.health++
-                  this.setState(attribute, () => {
-                    this.props.onSubmit(this.state)
-                  })
-                }}
-                className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-r-md border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
-              >
-                ➕
-              </button>
-            </div>
+            {this.valueSlider(st.attributes, 'health')}
           </div>
           <div className='p-2 flex-1'>
-            <label className='label-text' htmlFor='attrSpeed'>
-              Speed: {st.attributes.speed}
+            <label className='label-text text-center' htmlFor='attrSpeed'>
+              Speed
             </label>
-            <input
-              name='attrSpeed'
-              type='range'
-              min='1'
-              max='10'
-              className='hidden sm:block h-2 rounded-lg w-full'
-              value={st.attributes.speed}
-              onChange={(e) => {
-                let attribute = st.attributes
-                attribute.speed = parseInt(e.target.value)
-                this.setState(attribute, () => {
-                  this.props.onSubmit(this.state)
-                })
-              }}
-            />
-            <div className='inline-flex w-full rounded-md shadow-sm mt-2 sm:hidden' role='group'>
-              <button
-                type='button'
-                onClick={() => {
-                  let attribute = st.attributes
-                  if (attribute.speed > 1) attribute.speed--
-                  this.setState(attribute, () => {
-                    this.props.onSubmit(this.state)
-                  })
-                }}
-                className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-l-lg border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
-              >
-                ➖
-              </button>
-              <button
-                type='button'
-                onClick={() => {
-                  let attribute = st.attributes
-                  if (attribute.speed < 10) attribute.speed++
-                  this.setState(attribute, () => {
-                    this.props.onSubmit(this.state)
-                  })
-                }}
-                className='p-1 sm:py-2 sm:px-4 w-full text-sm font-bold rounded-r-md border focus:z-10 focus:ring-2 bg-slate-400 border-gray-600 text-white hover:text-white hover:bg-slate-500 focus:ring-blue-500 focus:text-white'
-              >
-                ➕
-              </button>
-            </div>
+            {this.valueSlider(st.attributes, 'speed')}
           </div>
         </div>
       </div>
