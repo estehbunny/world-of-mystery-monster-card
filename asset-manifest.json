@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/world-of-mystery-monster-card/static/css/main.b4515637.css",
-    "main.js": "/world-of-mystery-monster-card/static/js/main.d9a30e8f.js",
+    "main.js": "/world-of-mystery-monster-card/static/js/main.9068767c.js",
     "static/js/787.5b839527.chunk.js": "/world-of-mystery-monster-card/static/js/787.5b839527.chunk.js",
     "index.html": "/world-of-mystery-monster-card/index.html",
     "main.b4515637.css.map": "/world-of-mystery-monster-card/static/css/main.b4515637.css.map",
-    "main.d9a30e8f.js.map": "/world-of-mystery-monster-card/static/js/main.d9a30e8f.js.map",
+    "main.9068767c.js.map": "/world-of-mystery-monster-card/static/js/main.9068767c.js.map",
     "787.5b839527.chunk.js.map": "/world-of-mystery-monster-card/static/js/787.5b839527.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b4515637.css",
-    "static/js/main.d9a30e8f.js"
+    "static/js/main.9068767c.js"
   ]
 }
