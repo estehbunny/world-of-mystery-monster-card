@@ -8,11 +8,11 @@ import download from 'downloadjs'
 
 function App() {
   const [monster, setMonster] = useState({
-    name: 'Name',
+    name: 'Monster Name',
     lore: 'Your lore here',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, vel exercitationem esse quia doloremque perspiciatis veritatis adipisci tempore voluptatem. Impedit eos qui quos similique perspiciatis, ab pariatur soluta esse molestias.',
-    biomes: ['a biome$lime'],
+    biomes: ['forest$green'],
     attributes: {damage: 4, defense: 3, health: 2, speed: 5},
     photoUrl: `${process.env.PUBLIC_URL}/assets/example.png`
   })
