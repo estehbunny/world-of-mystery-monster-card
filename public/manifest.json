@@ -1,7 +1,7 @@
 {
   "short_name": "WoM Monster Card",
   "name": "World of Mystery · Monster Card Generator",
-  "description": "Create your own monster for World of Mystery, with customizable monster name, lore, attributes, and artwork. Be original & creative, and compete for original fan-made monster in World of Mystery! Powered by React + Tailwind CSS.",
+  "description": "Create your own monster for World of Mystery, with customizable monster name, lore, attributes, and artwork. Be original & creative, and compete for original fan-made monster in World of Mystery! Powered by React + Tailwind CSS",
   "icons": [
     {
       "src": "favicon.ico",
