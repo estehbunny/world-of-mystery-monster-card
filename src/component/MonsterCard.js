@@ -63,7 +63,7 @@ const PhotoCard = (props) => {
   return (
     <div>
       <div className={`container m-auto pb-4 ${bottomPadding}`}>
-        <div className='photo-template-card'>
+        <div className='photo-template-card h-[24rem] w-[19rem] rounded-3xl'>
           <img
             className='photo-card w-full h-full object-cover'
             src={props.imageUrl}
