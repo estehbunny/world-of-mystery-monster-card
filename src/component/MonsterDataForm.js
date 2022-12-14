@@ -9,7 +9,8 @@ class MonsterDataForm extends React.Component {
       description: props.monster.description,
       biomes: props.monster.biomes,
       attributes: props.monster.attributes,
-      photoUrl: props.monster.photoUrl
+      photoUrl: props.monster.photoUrl,
+      author: props.monster.author,
     }
   }
 
@@ -196,6 +197,22 @@ class MonsterDataForm extends React.Component {
             </label>
             {this.valueSlider(st.attributes, 'speed')}
           </div>
+        </div>
+        <div className='p-2 block'>
+          <label className='label-text' htmlFor='author'>
+            Author: <i>(optional)</i>
+          </label>
+          <input
+            className='input-text block w-full p-2.5 bg-slate-500'
+            name='author'
+            type='text'
+            value={this.state.author}
+            maxLength={16}
+            placeholder={'Author'}
+            onChange={(e) => {
+              this.handleChange(e)
+            }}
+          />
         </div>
       </div>
     )

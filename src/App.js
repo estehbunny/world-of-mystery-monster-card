@@ -135,7 +135,8 @@ function App() {
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, vel exercitationem esse quia doloremque perspiciatis veritatis adipisci tempore voluptatem. Impedit eos qui quos similique perspiciatis, ab pariatur soluta esse molestias.',
     biomes: ['forest$green'],
     attributes: {damage: 4, defense: 3, health: 2, speed: 5},
-    photoUrl: `${process.env.PUBLIC_URL}/assets/example.png`
+    photoUrl: `${process.env.PUBLIC_URL}/assets/example.png`,
+    author: '',
   })
 
   const onChangeData = (properties) => {
@@ -145,7 +146,8 @@ function App() {
       description: properties.description,
       biomes: properties.biomes,
       attributes: properties.attributes,
-      photoUrl: properties.photoUrl
+      photoUrl: properties.photoUrl,
+      author: properties.author,
     })
   }
 

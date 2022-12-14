@@ -14,6 +14,7 @@ const MonsterCard = (props) => {
           <PhotoCard
             name={props.monster.name}
             imageUrl={props.monster.photoUrl}
+            author={props.monster.author}
             downloadMode={forceWide}
           />
           <MonsterData
@@ -63,12 +64,16 @@ const PhotoCard = (props) => {
   return (
     <div>
       <div className={`container m-auto pb-4 ${bottomPadding}`}>
-        <div className='h-[24rem] w-[19rem] rounded-3xl bg-slate-200'>
+        <div className='select-none h-[24rem] w-[19rem] rounded-3xl bg-slate-200'>
           <img
             className='m-auto w-full h-full rounded-3xl object-cover'
             src={props.imageUrl}
             alt={props.name}
           />
+          <div class="relative -inset-y-10 text-clip">
+            <div class="relative text-center text-3xl text-gray-600 opacity-75 font-bold italic whitespace-nowrap overflow-clip">{props.author}</div>
+          <div class="absolute -inset-2 text-center text-3xl text-green-400 opacity-50 font-bold italic whitespace-nowrap overflow-clip">{props.author}</div>
+          </div>
         </div>
       </div>
     </div>
