@@ -84,12 +84,12 @@ class MonsterDataForm extends React.Component {
     return (
       <div className='px-8 py-4 bg-navy text-gray-200'>
         <h2 className='text-center'>Monster data</h2>
-        <div className='p-2'>
+        <div className='p-2 block'>
           <label className='label-text' htmlFor='name'>
             Name:{' '}
           </label>
           <input
-            className='input-text p-2.5'
+            className='input-text block w-full p-2.5 bg-slate-500'
             name='name'
             type='text'
             value={this.state.name}
@@ -99,12 +99,12 @@ class MonsterDataForm extends React.Component {
             }}
           />
         </div>
-        <div className='p-2'>
+        <div className='p-2 block'>
           <label className='label-text' htmlFor='lore'>
             Lore:{' '}
           </label>
           <input
-            className='input-text p-2.5'
+            className='input-text block w-full p-2.5 bg-slate-500'
             name='lore'
             type='text'
             value={this.state.lore}
@@ -114,12 +114,12 @@ class MonsterDataForm extends React.Component {
             }}
           />
         </div>
-        <div className='p-2'>
+        <div className='p-2 block'>
           <label className='label-text' htmlFor='description'>
             Description:{' '}
           </label>
           <textarea
-            className='input-text p-2.5'
+            className='input-text block w-full p-2.5 bg-slate-500'
             name='description'
             value={this.state.description}
             rows={5}
@@ -129,12 +129,12 @@ class MonsterDataForm extends React.Component {
             }}
           />
         </div>
-        <div className='p-2'>
+        <div className='p-2 block'>
           <label className='label-text' htmlFor='biomes'>
             Biomes: (separate with '$' for color, ',' per-biome item){' '}
           </label>
           <input
-            className='input-text p-2.5'
+            className='input-text block w-full p-2.5 bg-slate-500'
             name='biomes'
             type='text'
             value={this.state.biomes}
@@ -158,7 +158,7 @@ class MonsterDataForm extends React.Component {
             for supported color names
           </p>
         </div>
-        <div className='p-2'>
+        <div className='p-2 block'>
           <label className='label-text' htmlFor='imgupload'>
             Monster art:{' '}
           </label>

@@ -51,7 +51,7 @@ const BiomeChip = (props) => {
     : ['', '']
   return (
     <p
-      className={`biome-chip mx-2 my-1 w-36 uppercase ${customChipColor} ${customTextColor}`}
+      className={`mx-2 my-1 px-4 rounded-xl bg-gray-600 font-medium w-36 uppercase ${customChipColor} ${customTextColor}`}
     >
       {props.name}
     </p>
@@ -63,9 +63,9 @@ const PhotoCard = (props) => {
   return (
     <div>
       <div className={`container m-auto pb-4 ${bottomPadding}`}>
-        <div className='photo-template-card h-[24rem] w-[19rem] rounded-3xl'>
+        <div className='h-[24rem] w-[19rem] rounded-3xl bg-slate-200'>
           <img
-            className='photo-card w-full h-full object-cover'
+            className='m-auto w-full h-full rounded-3xl object-cover'
             src={props.imageUrl}
             alt={props.name}
           />
@@ -83,7 +83,7 @@ const MonsterData = (props) => {
         <h1 className='text-center min-h-[1em]'>{props.name}</h1>
         <h3 className='text-center min-h-[1em]'>{props.lore}</h3>
         <div className='pt-4'>
-          <div className={`skill-card ${wideSkillCard}`}>
+          <div className={`mx-auto max-w-xs sm:max-w-sm rounded-xl bg-navy-shade text-white ${wideSkillCard}`}>
             <SkillList
               key='damage'
               name='damage'
@@ -132,7 +132,7 @@ const SkillList = (props) => {
   const starSize = props.downloadMode ? 'h-6 w-6' : 'h-4 w-4 sm:h-6 sm:w-6'
 
   return (
-    <div className='attribute-card'>
+    <div className='flex items-center space-x-4 rounded-xl px-4 py-2'>
       <div className='shrink-0'>
         <img
           className={`${skillIconSize} rounded-xl ${
