@@ -70,11 +70,11 @@ const PhotoCard = (props) => {
             src={props.imageUrl}
             alt={props.name}
           />
-          <div class='relative -inset-y-10 text-clip'>
-            <div class='relative text-center text-3xl text-gray-600 opacity-75 font-bold italic whitespace-nowrap overflow-clip'>
+          <div className='relative -inset-y-10 text-clip'>
+            <div className='relative text-center text-3xl text-gray-600 opacity-75 font-bold italic whitespace-nowrap overflow-clip'>
               {props.author}
             </div>
-            <div class='absolute -inset-1 text-center text-3xl text-gray-400 opacity-50 font-bold italic whitespace-nowrap overflow-clip'>
+            <div className='absolute -inset-1 text-center text-3xl text-gray-400 opacity-50 font-bold italic whitespace-nowrap overflow-clip'>
               {props.author}
             </div>
           </div>
@@ -85,7 +85,7 @@ const PhotoCard = (props) => {
 }
 
 const MonsterData = (props) => {
-  let wideSkillCard = props.downloadMode ? 'max-w-sm' : ''
+  let skillCardWidth = props.downloadMode ? 'max-w-sm' : 'max-w-xs sm:max-w-sm'
   return (
     <div className='flex w-96'>
       <div className='container m-auto flex flex-col'>
@@ -93,7 +93,7 @@ const MonsterData = (props) => {
         <h3 className='text-center min-h-[1em]'>{props.lore}</h3>
         <div className='pt-4'>
           <div
-            className={`mx-auto max-w-xs sm:max-w-sm rounded-xl bg-navy-shade text-white ${wideSkillCard}`}
+            className={`mx-auto ${skillCardWidth} rounded-xl bg-navy-shade text-white`}
           >
             <SkillList
               key='damage'
@@ -137,10 +137,8 @@ const SkillList = (props) => {
     health: 'bg-green-500',
     speed: 'bg-orange-700'
   }
-  const skillIconSize = props.downloadMode
-    ? 'h-12 w-12'
-    : 'h-10 w-10 sm:h-12 sm:w-12'
-  const starSize = props.downloadMode ? 'h-6 w-6' : 'h-4 w-4 sm:h-6 sm:w-6'
+  const skillIconSize = 'h-12 w-12'
+  const starSize = props.downloadMode ? 'h-6 w-6 mx-1' : 'h-6 w-6 mx-0.5 sm:mx-1'
 
   return (
     <div className='flex items-center space-x-4 rounded-xl px-4 py-2'>
@@ -162,7 +160,7 @@ const SkillList = (props) => {
             return (
               <img
                 key={i}
-                className={`${starSize} mx-1 mb-2 inline-block`}
+                className={`${starSize} mb-2 inline-block`}
                 src={`${process.env.PUBLIC_URL}/assets/star.png`}
                 alt={`${props.description} stars`}
               />
