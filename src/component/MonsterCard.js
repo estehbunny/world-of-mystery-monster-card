@@ -70,9 +70,13 @@ const PhotoCard = (props) => {
             src={props.imageUrl}
             alt={props.name}
           />
-          <div class="relative -inset-y-10 text-clip">
-            <div class="relative text-center text-3xl text-gray-600 opacity-75 font-bold italic whitespace-nowrap overflow-clip">{props.author}</div>
-          <div class="absolute -inset-2 text-center text-3xl text-green-400 opacity-50 font-bold italic whitespace-nowrap overflow-clip">{props.author}</div>
+          <div class='relative -inset-y-10 text-clip'>
+            <div class='relative text-center text-3xl text-gray-600 opacity-75 font-bold italic whitespace-nowrap overflow-clip'>
+              {props.author}
+            </div>
+            <div class='absolute -inset-1 text-center text-3xl text-gray-400 opacity-50 font-bold italic whitespace-nowrap overflow-clip'>
+              {props.author}
+            </div>
           </div>
         </div>
       </div>
@@ -88,7 +92,9 @@ const MonsterData = (props) => {
         <h1 className='text-center min-h-[1em]'>{props.name}</h1>
         <h3 className='text-center min-h-[1em]'>{props.lore}</h3>
         <div className='pt-4'>
-          <div className={`mx-auto max-w-xs sm:max-w-sm rounded-xl bg-navy-shade text-white ${wideSkillCard}`}>
+          <div
+            className={`mx-auto max-w-xs sm:max-w-sm rounded-xl bg-navy-shade text-white ${wideSkillCard}`}
+          >
             <SkillList
               key='damage'
               name='damage'
@@ -156,7 +162,7 @@ const SkillList = (props) => {
             return (
               <img
                 key={i}
-                className={`${starSize} mx-0.5 mb-2 inline-block`}
+                className={`${starSize} mx-1 mb-2 inline-block`}
                 src={`${process.env.PUBLIC_URL}/assets/star.png`}
                 alt={`${props.description} stars`}
               />

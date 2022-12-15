@@ -14,6 +14,8 @@ class MonsterDataForm extends React.Component {
     }
   }
 
+  maxRating = 8
+
   handleChange(e) {
     let obj = {}
     obj[e.target.name] = e.target.value
@@ -37,7 +39,7 @@ class MonsterDataForm extends React.Component {
           name='attrDamage'
           type='range'
           min='1'
-          max='10'
+          max={this.maxRating}
           className='hidden sm:block h-2 rounded-lg w-full'
           value={attribute[attributeTarget]}
           onChange={(e) => {
@@ -66,7 +68,7 @@ class MonsterDataForm extends React.Component {
           <button
             type='button'
             onClick={() => {
-              if (attribute[attributeTarget] < 10) attribute[attributeTarget]++
+              if (attribute[attributeTarget] < this.maxRating) attribute[attributeTarget]++
               this.setState(attribute, () => {
                 this.props.onSubmit(this.state)
               })
