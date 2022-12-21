@@ -51,11 +51,11 @@ const BiomeChip = (props) => {
     ? [`bg-${props.color}-700`, `text-${props.color}-200`]
     : ['', '']
   return (
-    <p
-      className={`mx-2 my-1 px-4 rounded-xl bg-gray-600 font-medium w-36 uppercase ${customChipColor} ${customTextColor}`}
+    <div
+      className={`mx-2 my-1 px-4 py-1 leading-5 rounded-xl bg-gray-600 font-medium w-36 uppercase flex ${customChipColor} ${customTextColor}`}
     >
-      {props.name}
-    </p>
+      <p className='m-auto'>{props.name}</p>
+    </div>
   )
 }
 
