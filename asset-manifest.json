@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/world-of-mystery-monster-card/static/css/main.a29812d1.css",
-    "main.js": "/world-of-mystery-monster-card/static/js/main.5420b501.js",
+    "main.css": "/world-of-mystery-monster-card/static/css/main.f59a71d1.css",
+    "main.js": "/world-of-mystery-monster-card/static/js/main.1587bdaf.js",
     "static/js/787.5b839527.chunk.js": "/world-of-mystery-monster-card/static/js/787.5b839527.chunk.js",
     "index.html": "/world-of-mystery-monster-card/index.html",
-    "main.a29812d1.css.map": "/world-of-mystery-monster-card/static/css/main.a29812d1.css.map",
-    "main.5420b501.js.map": "/world-of-mystery-monster-card/static/js/main.5420b501.js.map",
+    "main.f59a71d1.css.map": "/world-of-mystery-monster-card/static/css/main.f59a71d1.css.map",
+    "main.1587bdaf.js.map": "/world-of-mystery-monster-card/static/js/main.1587bdaf.js.map",
     "787.5b839527.chunk.js.map": "/world-of-mystery-monster-card/static/js/787.5b839527.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a29812d1.css",
-    "static/js/main.5420b501.js"
+    "static/css/main.f59a71d1.css",
+    "static/js/main.1587bdaf.js"
   ]
 }
